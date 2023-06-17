@@ -1,0 +1,12 @@
+#chat-panel {
+    position: fixed;
+    margin: 15px;
+    left: calc(50% - 7.5px);
+    top: 0px;
+    bottom: 0px;
+    transform: translateX(-50%);
+    width: 50%;
+    max-width: 65%;
+    padding: 10px;
+    background-color: var(--color-secondary);
+}
