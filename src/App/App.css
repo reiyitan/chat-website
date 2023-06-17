@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary:	#1e1e1e;
+    --color-secondary: 	#383838;
+    --color-tertiary: #383838;
+    --color-text: #d2d7df;
+}
+
+@font-face {
+    font-family: "pictofont";
+    src: url("../../public/fonts/pictofont.ttf");
+}
+
+body {
+    font-family: "pictofont";
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+.panel-border {
+    border-style: none;
+    border-radius: 10px;
+}
