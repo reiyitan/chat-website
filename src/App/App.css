@@ -5,8 +5,9 @@
 :root {
     --color-primary:	#1e1e1e;
     --color-secondary: 	#383838;
-    --color-tertiary: #383838;
+    --color-tertiary: 	#6a6767;
     --color-text: #d2d7df;
+    --border-radius: 10px;
 }
 
 @font-face {
@@ -22,5 +23,5 @@ body {
 
 .panel-border {
     border-style: none;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
