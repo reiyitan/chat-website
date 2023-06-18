@@ -1,39 +1,53 @@
 :root {
     --chatpanel-margin: 15px;
     --textentry-minheight: 100px;
-    --text-padding: 10px;
+    --text-padding: 7.5px;
 }
 
 #chat-panel {
     position: fixed;
     margin: var(--chatpanel-margin);
+    padding: var(--text-padding);
     left: calc(50% - var(--chatpanel-margin));
     top: 0px;
     bottom: 0px;
     transform: translateX(-50%);
     width: 50%;
     max-width: 65%;
-    padding: var(--text-padding);
-    background-color: var(--color-secondary);
 }
 
 #message-container {
     position: absolute;
-    padding: 10px;
-    top: 0px;
+    padding: var(--text-padding);
     left: 0px;
+    top: 0px;
     width: 100%;
-    min-height: calc(100% - var(--textentry-minheight));
-    max-height: calc(100% - var(--textentry-minheight));
-    overflow-y: scroll;
+    height: calc(100% - var(--textentry-minheight));
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 #text-entry-container {
     width: 100%;
     position: absolute;
     min-height: var(--textentry-minheight);
+    max-height: 50%;
     bottom: 0px;
     left: 0px;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     background-color: var(--color-tertiary);
+}
+
+/* STYLING FOR THE SCROLLBAR */
+.TrackY {
+    position: absolute !important;
+    top: 0px !important;
+    height: 100% !important
+}
+
+.tHuMbY {
+
+    display: flex !important;
+    background: var(--thumb-color) !important;
+    width: 100% !important;
 }
