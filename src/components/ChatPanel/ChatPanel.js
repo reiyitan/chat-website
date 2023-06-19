@@ -1,11 +1,11 @@
 import React from "react";
-import { useState } from "react"; 
-import { Message } from "../Message";
-import { TextEntry } from "../TextEntry";
+import { useState, useRef, useEffect } from "react"; 
+import { Message, TextEntry } from "..";
 import { Scrollbar } from "react-scrollbars-custom";
 import "./ChatPanel.css";
 
 export const ChatPanel = () => {
+    const [value, setValue] = useState("");
     const [messages, setMessages] = useState([
         "test 1",
         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
@@ -19,6 +19,13 @@ export const ChatPanel = () => {
         "nasjdasdnas", "iernfgejrn", "askndasnd", "rfgnekrgkkergnj", "skdnasjnkdnsad", "askndklasknld", "askldnklasnd"
     ]);
 
+    const messageDivRef = useRef(null);
+    useEffect(() => {
+        if (messageDivRef.current) {
+            messageDivRef.current.scrollToBottom();
+        }
+    }, [messages]);
+
     return (
         <div
             id="chat-panel"
@@ -26,17 +33,18 @@ export const ChatPanel = () => {
         >
             <div id="message-container">
                 <Scrollbar
+                    ref={messageDivRef}
                     removeTrackYWhenNotUsed={true}
                     thumbYProps={{
                         renderer: (props) => {
                           const { elementRef, ...restProps } = props;
-                          return <span {...restProps} ref={elementRef} className="tHuMbY" />;
+                          return <span {...restProps} ref={elementRef} className="MsgThumbY" />;
                         }
                     }}
                     trackYProps={{
                         renderer: (props) => {
                           const { elementRef, ...restProps } = props;
-                          return <span {...restProps} ref={elementRef} className="TrackY" />;
+                          return <span {...restProps} ref={elementRef} className="MsgTrackY" />;
                         }
                     }}
                 >
@@ -50,6 +58,13 @@ export const ChatPanel = () => {
             <div
                 id="text-entry-container"
             >
+                <TextEntry
+                    value={value}
+                    setValue={setValue}
+                    messages={messages}
+                    setMessages={setMessages}
+                    messageDivRef={messageDivRef}
+                />
             </div>
         </div>
     );

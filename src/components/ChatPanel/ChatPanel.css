@@ -1,6 +1,6 @@
 :root {
     --chatpanel-margin: 15px;
-    --textentry-minheight: 100px;
+    --textentry-height: 100px;
     --text-padding: 7.5px;
 }
 
@@ -22,31 +22,31 @@
     left: 0px;
     top: 0px;
     width: 100%;
-    height: calc(100% - var(--textentry-minheight));
+    height: calc(100% - var(--textentry-height));
     background-color: var(--color-secondary);
     border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 #text-entry-container {
-    width: 100%;
     position: absolute;
-    min-height: var(--textentry-minheight);
-    max-height: 50%;
+    width: 100%;
+    padding: calc(2 * var(--text-padding));
+    height: var(--textentry-height);
     bottom: 0px;
     left: 0px;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     background-color: var(--color-tertiary);
 }
 
-/* STYLING FOR THE SCROLLBAR */
-.TrackY {
+/* STYLING FOR THE MESSAGE CONTAINER SCROLLBAR */
+.MsgTrackY {
     position: absolute !important;
     top: 0px !important;
-    height: 100% !important
+    height: 100% !important;
+    width: 5px !important;
 }
 
-.tHuMbY {
-
+.MsgThumbY {
     display: flex !important;
     background: var(--thumb-color) !important;
     width: 100% !important;
