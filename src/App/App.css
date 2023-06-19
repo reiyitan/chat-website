@@ -3,12 +3,15 @@
 }
 
 :root {
-    --color-primary:	#1e1e1e;
-    --color-secondary: 	#383838;
-    --color-tertiary: 	#6a6767;
-    --color-text: #d2d7df;
-    --thumb-color: 	#171917;
+    --color-primary:rgb(30, 30, 30);
+    --color-secondary: rgb(56, 56, 56);
+    --color-tertiary: rgb(74, 72, 72);
+    --color-quaternary: rgb(106, 103, 103);
+    --color-text: rgb(210, 215, 223);
+    --color-placeholder: rgb(140, 140, 140);
+    --thumb-color: rgb(23, 25, 23);
     --border-radius: 10px;
+    --font-size: 18px;
 }
 
 @font-face {
@@ -20,6 +23,7 @@ body {
     font-family: "pictofont";
     background-color: var(--color-primary);
     color: var(--color-text);
+    font-size: var(--font-size);
 }
 
 .panel-border {
