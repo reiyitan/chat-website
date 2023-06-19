@@ -1,5 +1,6 @@
 .message {
     max-width: 100%;
     height: auto;
+    white-space: pre-wrap;
     word-wrap: break-word;
 }
