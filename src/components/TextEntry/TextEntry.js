@@ -1,11 +1,35 @@
 import React from "react"; 
 import "./TextEntry.css";
 
-export const TextEntry = ({style}) => {
-    return (
-        <div
-            className="text-entry panel-border"
-            style={style}
-        >testing</div>
+export const TextEntry = ({
+    value, 
+    setValue,
+    messages, 
+    setMessages, 
+}) => {
+    const handleChange = (e) => {
+        setValue(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        setMessages([...messages, value]);
+        setValue("");
+        e.target.value = "";
+    }   
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            handleSubmit(e);
+        }
+    }
+
+    return (    
+        <textarea
+            id="text-entry"
+            spellCheck={false}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+        />
     );
 }
