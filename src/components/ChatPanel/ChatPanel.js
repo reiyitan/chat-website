@@ -4,20 +4,22 @@ import { Message, TextEntry } from "..";
 import { Scrollbar } from "react-scrollbars-custom";
 import "./ChatPanel.css";
 
+const testMessages = [
+    "test 1",
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "1231231231231231231231231231231231323",
+    "dasdasdasdadsadsdasdasdadsadsdasdasdasdasdadsdasdasdasdasdasdasdasdasd",
+    "this is a test message this is a test message this is a test message this is a test message this is a test message this is a test message this is a test message this is a test message",
+    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+    "aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii", "jj", "kk", "ll", "mm", "nn", "oo", "pp", "qq", "rr", "ss", "tt",
+    "uu", "vv", "ww", "xx", "yy", "zz", "aaa", "bbb", "adssadA", "asdasda", "asdasdasdasdasd", "werwerwerew", "btrerfertfg", "asdsadasd",
+    "nasjdasdnas", "iernfgejrn", "askndasnd", "rfgnekrgkkergnj", "skdnasjnkdnsad", "askndklasknld", "askldnklasnd"
+];
+
 export const ChatPanel = () => {
     const [value, setValue] = useState("");
-    const [messages, setMessages] = useState([
-        "test 1",
-        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-        "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-        "1231231231231231231231231231231231323",
-        "dasdasdasdadsadsdasdasdadsadsdasdasdasdasdadsdasdasdasdasdasdasdasdasd",
-        "this is a test message this is a test message this is a test message this is a test message this is a test message this is a test message this is a test message this is a test message",
-        "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-        "aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii", "jj", "kk", "ll", "mm", "nn", "oo", "pp", "qq", "rr", "ss", "tt",
-        "uu", "vv", "ww", "xx", "yy", "zz", "aaa", "bbb", "adssadA", "asdasda", "asdasdasdasdasd", "werwerwerew", "btrerfertfg", "asdsadasd",
-        "nasjdasdnas", "iernfgejrn", "askndasnd", "rfgnekrgkkergnj", "skdnasjnkdnsad", "askndklasknld", "askldnklasnd"
-    ]);
+    const [messages, setMessages] = useState([]);
 
     const messageDivRef = useRef(null);
     useEffect(() => {
