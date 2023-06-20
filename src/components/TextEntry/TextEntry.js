@@ -27,6 +27,7 @@ export const TextEntry = ({
     return (    
         <textarea
             id="text-entry"
+            placeholder="Send a message"
             spellCheck={false}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
