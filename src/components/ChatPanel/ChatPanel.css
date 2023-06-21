@@ -12,6 +12,7 @@
     top: 0px;
     bottom: 0px;
     transform: translateX(-50%);
+    min-width: 400px;
     width: 50%;
     max-width: 65%;
 }
