@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react"; 
-import { Message, TextEntry } from "..";
+import { Message, TextEntry } from "../../components";
 import { Scrollbar } from "react-scrollbars-custom";
-import "./ChatPanel.css";
+import "./ChatPage.css";
 
 const testMessages = [
     "test 1",
@@ -17,7 +17,7 @@ const testMessages = [
     "nasjdasdnas", "iernfgejrn", "askndasnd", "rfgnekrgkkergnj", "skdnasjnkdnsad", "askndklasknld", "askldnklasnd"
 ];
 
-export const ChatPanel = () => {
+export const ChatPage = () => {
     const [value, setValue] = useState("");
     const [messages, setMessages] = useState([]);
 
