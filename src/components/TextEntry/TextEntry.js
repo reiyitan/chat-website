@@ -1,6 +1,9 @@
 import React from "react"; 
 import "./TextEntry.css";
 
+/**
+ * The text entry box where the user types a message to be sent. 
+ */
 export const TextEntry = ({
     value, 
     setValue,
