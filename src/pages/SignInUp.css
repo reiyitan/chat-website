@@ -1,0 +1,16 @@
+.sign-in-up-panel {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: var(--signin-margin);
+    padding: var(--signin-padding);
+    left: calc(50% - var(--signin-margin));
+    top: 0px;
+    bottom: 0px;
+    transform: translateX(-50%);
+    min-width: 400px;
+    width: 50%;
+    background-color: var(--color-secondary);
+}
