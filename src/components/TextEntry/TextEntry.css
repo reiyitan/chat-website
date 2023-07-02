@@ -5,9 +5,8 @@
     background-color: var(--color-quaternary);
     
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-large);
     outline: none;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
     overflow-y: scroll;
 
     font-family: "pictofont"; 
