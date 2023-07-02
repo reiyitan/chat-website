@@ -1,0 +1,14 @@
+.button {
+    border-radius: var(--border-radius-small);
+    border: none;
+    width: 90%;
+    height: 35px;
+    background-color: var(--color-highlight);
+    font-family: "pictofont";
+    color: var(--color-text);
+    font-size: var(--font-size-big);
+}
+
+.button:hover {
+    background-color: var(--color-highlight-dark);
+}
