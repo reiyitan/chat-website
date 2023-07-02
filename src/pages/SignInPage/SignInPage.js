@@ -5,6 +5,11 @@ import "../SignInUp.css";
 import { TextForm, Button } from "../../components";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
+/**
+ * Component for the sign in page. 
+ * 
+ * @param app - A reference to the Firebase app. 
+ */
 export const SignInPage = ({app}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
