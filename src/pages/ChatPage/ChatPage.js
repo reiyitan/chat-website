@@ -17,6 +17,9 @@ const testMessages = [
     "nasjdasdnas", "iernfgejrn", "askndasnd", "rfgnekrgkkergnj", "skdnasjnkdnsad", "askndklasknld", "askldnklasnd"
 ];
 
+/**
+ * The page where a user can send a message to another user. 
+ */
 export const ChatPage = () => {
     const [value, setValue] = useState("");
     const [messages, setMessages] = useState([]);
