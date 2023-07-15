@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./SignInPage.css";
 import "../SignInUp.css";
-import { TextForm, Button } from "../../components";
+import { TextForm, Button, Warning } from "../../components";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 /**
@@ -13,13 +13,20 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 export const SignInPage = ({app}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [warning, setWarning] = useState("");
     const handleLogin = () => {
+        if (!email || !password) {
+            setWarning("Please fill out all fields");
+        } 
+        else {
+            setWarning("");
+        }
         console.log(`login ${email} ${password}`);
     }
 
     return (
         <div 
-            className="sign-in-up-panel panel-border"
+            className="sign-in-up-panel panel-border box-shadow"
         >
             <TextForm 
                 setValue={setEmail}
@@ -32,6 +39,12 @@ export const SignInPage = ({app}) => {
             <Button 
                 onClick={handleLogin}
                 text="Sign in"
+            />
+            <Warning 
+                text={warning}
+                position={{
+                    bottom: "10%"
+                }}
             />
         </div>
     );
