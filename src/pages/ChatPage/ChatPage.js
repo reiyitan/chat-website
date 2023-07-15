@@ -34,7 +34,7 @@ export const ChatPage = () => {
     return (
         <div
             id="chat-panel"
-            className="panel-border"
+            className="panel-border box-shadow"
         >
             <div id="message-container">
                 <Scrollbar
