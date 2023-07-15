@@ -30,7 +30,6 @@ export const TextEntry = ({
     return (    
         <textarea
             id="text-entry"
-            className="box-shadow"
             placeholder="Send a message"
             spellCheck={false}
             onChange={handleChange}
