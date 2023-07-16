@@ -1,6 +1,5 @@
 import React from "react"; 
 import { useState } from "react";
-import "./SignInPage.css";
 import "../SignInUp.css";
 import { TextForm, Button } from "../../components";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -12,13 +11,14 @@ import { signInWithEmailAndPassword } from "firebase/auth";
  */
 export const SignInPage = ({app}) => {
     const [email, setEmail] = useState("");
+    const [emailWarning, setEmailWarning]  = useState("");
+
     const [password, setPassword] = useState("");
-    const [emailWarning, setEmailWarning]  = useState(false); 
-    const [passWarning, setPassWarning] = useState(false); 
+    const [passWarning, setPassWarning] = useState(""); 
 
     const handleLogin = () => {
-        if (!email) setEmailWarning(true); 
-        if (!password) setPassWarning(true);
+        if (!email) setEmailWarning("default"); 
+        if (!password) setPassWarning("default");
         if (email && password) {
             console.log(`login ${email} ${password}`);
         }
