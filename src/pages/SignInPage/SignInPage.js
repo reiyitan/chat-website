@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./SignInPage.css";
 import "../SignInUp.css";
-import { TextForm, Button, Warning } from "../../components";
+import { TextForm, Button } from "../../components";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 /**
@@ -13,15 +13,15 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 export const SignInPage = ({app}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [warning, setWarning] = useState("");
+    const [emailWarning, setEmailWarning]  = useState(false); 
+    const [passWarning, setPassWarning] = useState(false); 
+
     const handleLogin = () => {
-        if (!email || !password) {
-            setWarning("Please fill out all fields");
-        } 
-        else {
-            setWarning("");
+        if (!email) setEmailWarning(true); 
+        if (!password) setPassWarning(true);
+        if (email && password) {
+            console.log(`login ${email} ${password}`);
         }
-        console.log(`login ${email} ${password}`);
     }
 
     return (
@@ -31,20 +31,16 @@ export const SignInPage = ({app}) => {
             <TextForm 
                 setValue={setEmail}
                 label="EMAIL"
+                showWarning={emailWarning}
             />
             <TextForm 
                 setValue={setPassword}
                 label="PASSWORD"
+                showWarning={passWarning}
             />
             <Button 
                 onClick={handleLogin}
                 text="Sign in"
-            />
-            <Warning 
-                text={warning}
-                position={{
-                    bottom: "10%"
-                }}
             />
         </div>
     );
