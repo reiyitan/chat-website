@@ -17,8 +17,8 @@ export const SignInPage = ({app}) => {
     const [passWarning, setPassWarning] = useState(""); 
 
     const handleLogin = () => {
-        if (!email) setEmailWarning("default"); 
-        if (!password) setPassWarning("default");
+        setEmailWarning(!email ? "default" : "");
+        setPassWarning(!password ? "default" : "");
         if (email && password) {
             console.log(`login ${email} ${password}`);
         }

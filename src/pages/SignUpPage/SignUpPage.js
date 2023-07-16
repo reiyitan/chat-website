@@ -16,7 +16,13 @@ export const SignUpPage = ({app}) => {
     const [confirmWarning, setConfirmWarning] = useState("");
 
     const handleSignUp = () => {
-
+        setEmailWarning(!email ? "default" : "");
+        setPassWarning(!password ? "default" : "");
+        setConfirmWarning(!confirmPassword ? "default" : "");
+        if (password !== confirmPassword) {
+            setPassWarning("Passwords do not match");
+            setConfirmWarning("Passwords do not match");
+        }
     }
 
     return (
