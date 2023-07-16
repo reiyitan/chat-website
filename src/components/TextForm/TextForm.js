@@ -7,7 +7,7 @@ import "./TextForm.css";
  * @param setValue - Setter function to update a state variable to the current value of the input element.
  * @param label - The label to display above the text input. 
  */
-export const TextForm = ({setValue, label}) => {
+export const TextForm = ({setValue, label, showWarning}) => {
     const handleInput = (e) => {
         e.preventDefault();
         setValue(e.target.value);
@@ -15,7 +15,9 @@ export const TextForm = ({setValue, label}) => {
 
     return (
         <div className="text-form-container">
-            <div className="label">{label}</div>
+            <div className={showWarning ? "label warning" : "label"}>
+                {label}{showWarning ? " - This field is required" : ""}
+            </div>
             <input 
                 className="text-form-input"
                 type="text"
