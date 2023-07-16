@@ -8,6 +8,6 @@ const app = initializeApp(firebaseConfig);
 
 export const App = () => {
     return (
-        <SignInPage />
+        <SignInPage app={app}/>
     );
 }
