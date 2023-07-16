@@ -18,7 +18,13 @@ export const TextForm = ({setValue, label, type, warning}) => {
     return (
         <div className="text-form-container">
             <div className={warning ? "label warning" : "label"}>
-                {label}{warning === "default" ? " - This field is required" : warning}
+                {label}
+                {warning === "default" 
+                    ? " - This field is required" 
+                    : warning !== ""
+                        ? ` - ${warning}`
+                        : ""
+                }
             </div>
             <input 
                 className="text-form-input"
