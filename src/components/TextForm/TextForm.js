@@ -6,8 +6,10 @@ import "./TextForm.css";
  * 
  * @param setValue - Setter function to update a state variable to the current value of the input element.
  * @param label - The label to display above the text input. 
+ * @param type - Specifies input type. Either "text" or "password". 
+ * @param showWarning - A state variable boolean. If set to true, the label will display a warning.
  */
-export const TextForm = ({setValue, label, showWarning}) => {
+export const TextForm = ({setValue, label, type, showWarning}) => {
     const handleInput = (e) => {
         e.preventDefault();
         setValue(e.target.value);
@@ -20,7 +22,7 @@ export const TextForm = ({setValue, label, showWarning}) => {
             </div>
             <input 
                 className="text-form-input"
-                type="text"
+                type={type}
                 spellCheck={false}
                 onChange={handleInput}
             />
