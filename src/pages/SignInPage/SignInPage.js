@@ -31,11 +31,13 @@ export const SignInPage = ({app}) => {
             <TextForm 
                 setValue={setEmail}
                 label="EMAIL"
+                type="text"
                 showWarning={emailWarning}
             />
             <TextForm 
                 setValue={setPassword}
                 label="PASSWORD"
+                type="password"
                 showWarning={passWarning}
             />
             <Button 
