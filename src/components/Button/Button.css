@@ -4,7 +4,7 @@
     width: 90%;
     height: 35px;
     background-color: var(--color-highlight);
-    font-family: "pictofont";
+    font-family: "custom";
     color: var(--color-text);
     font-size: var(--font-size-big);
 }

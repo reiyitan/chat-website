@@ -9,7 +9,7 @@
     outline: none;
     overflow-y: scroll;
 
-    font-family: "pictofont"; 
+    font-family: "custom"; 
     color: var(--color-text);
     font-size: var(--font-size);
 }

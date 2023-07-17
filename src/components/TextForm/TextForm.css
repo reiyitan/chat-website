@@ -7,17 +7,18 @@
     width: 100%;
     outline: none;
     background-color: var(--color-quaternary);
-    font-family: "pictofont";
+    font-family: "custom";
     font-size: var(--font-size-big);
     color: var(--text-color);
     height: 35px;
     border: none;
-    padding-left: 5px;
+    padding-left: var(--text-padding);
     border-radius: var(--border-radius-small);
 }
 
 .label {
-    margin-bottom: 5px;
+    font-size: var(--font-size-big);
+    margin-bottom: 1px;
 }
 
 .warning {
