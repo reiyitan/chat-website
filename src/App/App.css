@@ -15,19 +15,20 @@
     --thumb-color: rgb(23, 25, 23);
     --border-radius-large: 10px;
     --border-radius-small: 5px;
-    --font-size: 18px;
-    --font-size-big: 20px;
+    --font-size: 15px;
+    --font-size-big: 18px;
     --signin-margin: 100px;
     --signin-padding: 40px;
+    --text-padding: 7.5px;
 }
 
 @font-face {
-    font-family: "pictofont";
-    src: url("../../public/fonts/pictofont.ttf");
+    font-family: "custom";
+    src: url("../../public/fonts/anaheim.ttf");
 }
 
 body {
-    font-family: "pictofont";
+    font-family: "custom";
     background-color: var(--color-primary);
     color: var(--color-text);
     font-size: var(--font-size);
