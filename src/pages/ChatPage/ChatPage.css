@@ -1,7 +1,6 @@
 :root {
     --chatpanel-margin: 15px;
     --textentry-height: 100px;
-    --text-padding: 7.5px;
 }
 
 #chat-panel {
