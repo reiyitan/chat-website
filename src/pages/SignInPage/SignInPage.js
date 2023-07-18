@@ -28,6 +28,8 @@ export const SignInPage = ({auth}) => {
         <div 
             className="sign-in-up-panel panel-border box-shadow"
         >
+            <h1 className="sign-in-up-greeting">Welcome back!</h1>
+            <p>Sign in to continue.</p>
             <TextForm 
                 setValue={setEmail}
                 label="Email"
@@ -42,7 +44,7 @@ export const SignInPage = ({auth}) => {
             />
             <Button 
                 onClick={handleLogin}
-                text="Sign In"
+                text="Sign in"
             />
         </div>
     );

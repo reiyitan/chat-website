@@ -58,6 +58,8 @@ export const SignUpPage = ({auth, user, setUser}) => {
 
     return (
         <div className="sign-in-up-panel panel-border box-shadow">
+            <h1 className="sign-in-up-greeting">Welcome!</h1>
+            <p>Create an account to get started.</p>
             <TextForm
                 setValue={setEmail}
                 label="Email"
@@ -72,13 +74,13 @@ export const SignUpPage = ({auth, user, setUser}) => {
             />
             <TextForm
                 setValue={setConfirmPassword}
-                label="Confirm Password"
+                label="Confirm password"
                 type="password"
                 warning={confirmWarning}
             />
             <Button
                 onClick={handleSignUp}
-                text="Sign Up"
+                text="Sign up"
             />
         </div>
     );
