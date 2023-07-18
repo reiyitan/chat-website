@@ -4,8 +4,14 @@ import "../SignInUp.css";
 import { TextForm, Button } from "../../components";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-
-export const SignUpPage = ({app}) => {
+/**
+ * User sign up page.
+ * 
+ * @param auth - Reference to Firebase authentication service. 
+ * @param user - State variable to hold user information.
+ * @param setUser - Callback function passed from App.js to update the user state variable. 
+ */
+export const SignUpPage = ({auth, user, setUser}) => {
     const [email, setEmail] = useState(""); 
     const [emailWarning, setEmailWarning] = useState(""); 
 
@@ -22,6 +28,31 @@ export const SignUpPage = ({app}) => {
         if (password !== confirmPassword) {
             setPassWarning("Passwords do not match");
             setConfirmWarning("Passwords do not match");
+        }
+
+        if ((email && password && confirmPassword) && password === confirmPassword) {
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const userInfo = userCredential.user;
+                    setUser(userInfo);
+                    console.log(user);
+                })
+                .catch((error) => {
+                    const code = error.code; 
+                    switch(code) {
+                        case "auth/weak-password":
+                            setPassWarning("Password must be at least 6 characters");
+                            setConfirmWarning("Password must be at least 6 characters");
+                            break;
+                        case "auth/email-already-in-use":
+                            setEmailWarning("Email already in use");
+                            break;
+                        case "auth/invalid-email":
+                            setEmailWarning("Invalid email");
+                            break;
+                    }
+                    console.log(error.code);
+                })
         }
     }
 
