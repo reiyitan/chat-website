@@ -30,19 +30,19 @@ export const SignInPage = ({auth}) => {
         >
             <TextForm 
                 setValue={setEmail}
-                label="EMAIL"
+                label="Email"
                 type="text"
                 warning={emailWarning}
             />
             <TextForm 
                 setValue={setPassword}
-                label="PASSWORD"
+                label="Password"
                 type="password"
                 warning={passWarning}
             />
             <Button 
                 onClick={handleLogin}
-                text="Sign in"
+                text="Sign In"
             />
         </div>
     );
