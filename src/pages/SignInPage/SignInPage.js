@@ -7,9 +7,9 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 /**
  * Component for the sign in page. 
  * 
- * @param app - A reference to the Firebase app. 
+ * @param auth - A reference to Firebase authentication service. 
  */
-export const SignInPage = ({app}) => {
+export const SignInPage = ({auth}) => {
     const [email, setEmail] = useState("");
     const [emailWarning, setEmailWarning]  = useState("");
 
