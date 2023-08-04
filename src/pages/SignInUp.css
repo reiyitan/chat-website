@@ -1,12 +1,17 @@
+:root {
+    --signinup-margin: 200px;
+    --signinup-padding: 40px;
+}
+
 .sign-in-up-panel {
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: var(--signin-margin);
-    padding: var(--signin-padding);
-    left: calc(50% - var(--signin-margin));
+    margin: var(--signinup-margin);
+    padding: var(--signinup-padding);
+    left: calc(50% - var(--signinup-margin));
     top: 0px;
     bottom: 0px;
     transform: translateX(-50%);
