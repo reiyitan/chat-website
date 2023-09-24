@@ -3,15 +3,15 @@ import { useState } from "react";
 import "../SignInUp.css";
 import { TextForm, Button } from "../../components";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 /**
  * User sign up page.
  * 
  * @param auth - Reference to Firebase authentication service. 
- * @param user - State variable to hold user information.
- * @param setUser - Callback function passed from App.js to update the user state variable. 
  */
-export const SignUpPage = ({auth, user, setUser}) => {
+export const SignUpPage = ({auth}) => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState(""); 
     const [emailWarning, setEmailWarning] = useState(""); 
 
@@ -34,8 +34,7 @@ export const SignUpPage = ({auth, user, setUser}) => {
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     const userInfo = userCredential.user;
-                    setUser(userInfo);
-                    console.log(user);
+                    navigate("/chat");
                 })
                 .catch((error) => {
                     const code = error.code; 
@@ -51,7 +50,7 @@ export const SignUpPage = ({auth, user, setUser}) => {
                             setEmailWarning("Invalid email");
                             break;
                     }
-                    console.log(error.code);
+                    console.log(error);
                 })
         }
     }

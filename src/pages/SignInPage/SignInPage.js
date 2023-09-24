@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../SignInUp.css";
 import { TextForm, Button } from "../../components";
+import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 /**
@@ -10,6 +11,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
  * @param auth - A reference to Firebase authentication service. 
  */
 export const SignInPage = ({auth}) => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [emailWarning, setEmailWarning]  = useState("");
 
@@ -17,10 +19,24 @@ export const SignInPage = ({auth}) => {
     const [passWarning, setPassWarning] = useState(""); 
 
     const handleLogin = () => {
+        console.log(auth);
         setEmailWarning(!email ? "default" : "");
         setPassWarning(!password ? "default" : "");
         if (email && password) {
-            console.log(`login ${email} ${password}`);
+            console.log(email);
+            console.log(password);
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) =>
+                navigate("/chat")
+            )
+            .catch((error) => {
+                const code = error.code;
+                switch (code) {
+                    case "auth/user-not-found":
+                        setEmailWarning("No user found with that email");
+                        break;
+                }
+            })
         }
     }
 
