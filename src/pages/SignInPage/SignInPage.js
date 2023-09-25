@@ -23,8 +23,6 @@ export const SignInPage = ({auth}) => {
         setEmailWarning(!email ? "default" : "");
         setPassWarning(!password ? "default" : "");
         if (email && password) {
-            console.log(email);
-            console.log(password);
             signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) =>
                 navigate("/chat")
