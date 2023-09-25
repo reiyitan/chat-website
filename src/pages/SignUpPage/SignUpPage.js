@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../SignInUp.css";
 import { TextForm, Button } from "../../components";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 /**
  * User sign up page.
@@ -81,6 +81,7 @@ export const SignUpPage = ({auth}) => {
                 onClick={handleSignUp}
                 text="Sign up"
             />
+            <p>Already have an account? <Link to="/signin" className="link">Sign in.</Link></p>
         </div>
     );
 }

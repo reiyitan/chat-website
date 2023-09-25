@@ -1,7 +1,6 @@
 import React from "react"; 
 import { useState } from "react";
 import "../SignInUp.css";
-import "./SignInPage.css";
 import { TextForm, Button } from "../../components";
 import { useNavigate, Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -63,7 +62,7 @@ export const SignInPage = ({auth}) => {
                 onClick={handleLogin}
                 text="Sign in"
             />
-            <p>Don't have an account yet? <Link to="./signup" id="sign-up-link">Create an account.</Link></p>
+            <p>Don't have an account yet? <Link to="/signup" className="link">Create an account.</Link></p>
         </div>
     );
 }

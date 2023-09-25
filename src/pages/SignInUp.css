@@ -24,3 +24,8 @@
 .sign-in-up-greeting {
      margin: 1px;
 }
+
+.link {
+    text-decoration: none;
+    color: var(--color-link);
+}
