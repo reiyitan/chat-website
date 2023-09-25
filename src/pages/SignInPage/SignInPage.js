@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../SignInUp.css";
 import { TextForm, Button } from "../../components";
-import { useNavigate, Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 /**
@@ -11,7 +11,6 @@ import { signInWithEmailAndPassword } from "firebase/auth";
  * @param auth - A reference to Firebase authentication service. 
  */
 export const SignInPage = ({auth}) => {
-    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [emailWarning, setEmailWarning]  = useState("");
 
@@ -19,19 +18,27 @@ export const SignInPage = ({auth}) => {
     const [passWarning, setPassWarning] = useState(""); 
 
     const handleLogin = () => {
-        console.log(auth);
         setEmailWarning(!email ? "default" : "");
         setPassWarning(!password ? "default" : "");
         if (email && password) {
             signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) =>
-                navigate("/chat")
-            )
+            .then((userCredential) => {
+                return redirect("/chat");
+            })
             .catch((error) => {
                 const code = error.code;
                 switch (code) {
                     case "auth/user-not-found":
                         setEmailWarning("No user found with that email");
+                        break;
+                    case "auth/invalid-email":
+                        setEmailWarning("Enter a valid email");
+                        break;
+                    case "auth/wrong-password": 
+                        setPassWarning("The password you entered is incorrect");
+                        break;
+                    default:
+                        console.log(error);
                         break;
                 }
             })
